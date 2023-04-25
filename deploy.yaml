@@ -28,7 +28,7 @@ spec:
         app: newd
     spec:
       containers:
-      - image: bhupeshpandey3/jenkins
+      - image: karanchhatwani/jenkins
         name: jenkins
         ports:
         - containerPort: 80
