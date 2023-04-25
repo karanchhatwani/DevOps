@@ -1,0 +1,37 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  creationTimestamp: null
+  name: test
+spec: {}
+status: {}
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: newd
+  name: newd
+  namespace: test
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: newd
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: newd
+    spec:
+      containers:
+      - image: bhupeshpandey3/jenkins
+        name: jenkins
+        ports:
+        - containerPort: 80
+        resources: {}
+status: {}
+---
